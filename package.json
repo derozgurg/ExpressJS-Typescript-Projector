@@ -1,7 +1,8 @@
 {
-  "name": "uboost-server",
+  "name": "express-typescript-mvc",
+   "author":"Özgür Çimen derozgur@gmail.com",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "main": "./dist/server.js",
   "scripts": {
     "start": "npm run build && npm run watch",
