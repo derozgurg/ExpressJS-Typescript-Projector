@@ -1,0 +1,36 @@
+{
+  "name": "uboost-server",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/server.js",
+  "scripts": {
+    "start": "npm run build && npm run watch",
+    "build": "del-cli ./dist/* && npm run build-ts && npm run tslint",
+    "watch-node": "cross-env NODE_ENV=development PORT=3001 nodemon --inspect ./dist/server.js",
+    "watch-ts": "tsc -w ",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\"  \"npm run watch-ts\" \"npm run watch-node\"",
+    "build-ts": "tsc ",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.16.1",
+    "@types/request": "^2.48.1",
+    "del-cli": "^1.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.5"
+  }
+}
