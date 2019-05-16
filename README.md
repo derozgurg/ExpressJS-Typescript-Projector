@@ -41,7 +41,8 @@ export default class UserController extends ApiControllerBase {
     //http://localhost:3001/user/userid
     @HttpAction({
         method: 'get',
-        path: '/:id'})
+        path: '/:id'
+    })
     public get(request: express.Request, response: express.Response) {
         response.send('get user by id ');
     }
